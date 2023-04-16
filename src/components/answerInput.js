@@ -1,6 +1,6 @@
 import { useState } from 'react'
 
-export default function AnswerInput({ onSubmit, state }) {
+export default function AnswerInput({ onSubmit, phase }) {
   const [answer, setAnswer] = useState('')
 
   const handleOnSubmit = (e) => {
@@ -8,7 +8,7 @@ export default function AnswerInput({ onSubmit, state }) {
 
     onSubmit(answer)
 
-    if (state !== 'new') {
+    if (phase !== 'new') {
       setAnswer('')
     }
   }
@@ -27,7 +27,7 @@ export default function AnswerInput({ onSubmit, state }) {
           placeholder="答えを入力してください"
           className="block w-full rounded-md border-0 py-4 px-4 text-gray-300 bg-gray-950 ring-1 ring-inset ring-gray-800 placeholder:text-gray-700 focus:ring-2 focus:ring-inset focus:ring-gray-600 leading-none text-2xl text-center"
           onChange={handleOnChange}
-          readOnly={state !== 'new'}
+          readOnly={phase !== 'new'}
           tabIndex={0}
           autoFocus
           value={answer}

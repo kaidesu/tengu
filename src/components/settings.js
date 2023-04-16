@@ -2,8 +2,19 @@ import { Fragment } from 'react'
 import Checkbox from '@/components/checkbox'
 import { Dialog, Transition } from '@headlessui/react'
 import { XMarkIcon } from '@heroicons/react/24/outline'
+import useSettingsContext from '@/hooks/useSettingsContext'
 
 export default function Settings({ isOpen, setIsOpen }) {
+  const { state, dispatch } = useSettingsContext()
+
+  const toggleForm = (name) => {
+    dispatch({ type: 'TOGGLE_FORM', payload: name })
+  }
+
+  const toggleGroup = (name) => {
+    dispatch({ type: 'TOGGLE_GROUP', payload: name })
+  }
+
   return (
     <Transition.Root show={isOpen} as={Fragment}>
       <Dialog as="div" className="relative z-10" onClose={setIsOpen}>
@@ -38,7 +49,7 @@ export default function Settings({ isOpen, setIsOpen }) {
                       {/* Header */}
                       <div className="border-b border-gray-800 px-4 py-6 sm:px-6">
                         <div className="flex items-start justify-between space-x-3">
-                          <div classNAme="space-y-1">
+                          <div className="space-y-1">
                             <Dialog.Title className="text-base font-semibold leading-6 text-gray-100">
                               Settings
                             </Dialog.Title>
@@ -49,10 +60,6 @@ export default function Settings({ isOpen, setIsOpen }) {
 
                             <p className="text-sm text-gray-600">
                               どの活用セットを練習したいか設定してください。
-                            </p>
-
-                            <p className="text-sm text-red-500">
-                              Not currently connected.
                             </p>
                           </div>
 
@@ -83,43 +90,43 @@ export default function Settings({ isOpen, setIsOpen }) {
 
                           <div className="sm:col-span-2">
                             
-                            <Checkbox id="negative-form" label="Negative">
+                            <Checkbox id="negative-form" label="Negative" checked={state.forms.negative} handleOnChange={() => toggleForm('negative')}>
                               Expresses negation or denial.
                             </Checkbox>
 
-                            <Checkbox id="past-form" label="Past">
+                            <Checkbox id="past-form" label="Past" checked={state.forms.past} handleOnChange={() => toggleForm('past')}>
                               Indicates past actions or states.
                             </Checkbox>
 
-                            <Checkbox id="te-form" label="て-form">
+                            <Checkbox id="te-form" label="て-form" checked={state.forms.te} handleOnChange={() => toggleForm('te')}>
                               A versatile form used for connecting actions, making requests, or expressing permission.
                             </Checkbox>
 
-                            <Checkbox id="progressive" label="Progressive">
+                            <Checkbox id="progressive" label="Progressive" checked={state.forms.progressive} handleOnChange={() => toggleForm('progressive')}>
                               Describes ongoing actions or states.
                             </Checkbox>
 
-                            <Checkbox id="desire" label="Desire">
+                            <Checkbox id="desire" label="Desire" checked={state.forms.desire} handleOnChange={() => toggleForm('desire')}>
                               Expresses desire or intention.
                             </Checkbox>
 
-                            <Checkbox id="volitional" label="Volitional">
+                            <Checkbox id="volitional" label="Volitional" checked={state.forms.volitional} handleOnChange={() => toggleForm('volitional')}>
                               Indicates a speaker's intention, suggestion, or invitation to do an action.
                             </Checkbox>
 
-                            <Checkbox id="potential" label="Potential">
+                            <Checkbox id="potential" label="Potential" checked={state.forms.potential} handleOnChange={() => toggleForm('potential')}>
                               Describes the ability or possibility to perform an action.
                             </Checkbox>
 
-                            <Checkbox id="imperative" label="Imperative">
+                            <Checkbox id="imperative" label="Imperative" checked={state.forms.imperative} handleOnChange={() => toggleForm('imperative')}>
                               Conveys a command or strong request.
                             </Checkbox>
 
-                            <Checkbox id="passive" label="Passive">
+                            <Checkbox id="passive" label="Passive" checked={state.forms.passive} handleOnChange={() => toggleForm('passive')}>
                               Indicates that the subject is being acted upon.
                             </Checkbox>
 
-                            <Checkbox id="causative" label="Causative">
+                            <Checkbox id="causative" label="Causative" checked={state.forms.causative} handleOnChange={() => toggleForm('causative')}>
                               Expresses that someone causes or makes another person do something.
                             </Checkbox>
                           </div>
@@ -136,51 +143,15 @@ export default function Settings({ isOpen, setIsOpen }) {
                           </div>
 
                           <div className="sm:col-span-2">
-                            <Checkbox id="ichidan" label="Ichidan">
+                            <Checkbox id="ichidan" label="Ichidan" checked={state.groups.ichidan} handleOnChange={() => toggleGroup('ichidan')}>
                               Also known as る or Group I verbs.
                             </Checkbox>
 
-                            <Checkbox id="godan" label="Godan">
+                            <Checkbox id="godan" label="Godan" checked={state.groups.godan} handleOnChange={() => toggleGroup('godan')}>
                               Also known as う or Group II verbs.
                             </Checkbox>
                           </div>
                         </div>
-
-                        <div className="space-y-2 px-4 sm:grid sm:grid-cols-3 sm:gap-4 sm:space-y-0 sm:px-6 sm:py-5">
-                          <div>
-                            <label
-                              htmlFor="other"
-                              className="block text-sm font-medium leading-6 sm:mt-1.5"
-                            >
-                              Other
-                            </label>
-                          </div>
-
-                          <div className="sm:col-span-2">
-                            ...
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-
-                    {/* Footer */}
-                    <div className="flex-shrink-0 border-t border-gray-800 px-4 py-4 sm:px-6">
-                      <div className="flex justify-end space-x-3">
-                        <button
-                          type="button"
-                          className="rounded-md px-3 py-2 text-sm font-semibold bg-gray-700 text-gray-300 hover:text-gray-50 focus:outline-none focus:ring-violet-500 focus:ring-offset-2"
-                          onClick={() => setIsOpen(false)}
-                        >
-                          Cancel
-                        </button>
-
-                        <button
-                          type="button"
-                          className="rounded-md px-3 py-2 text-sm font-semibold bg-violet-700 text-violet-200 hover:text-violet-50 focus:outline-none focus:ring-violet-500 focus:ring-offset-2"
-                          onClick={() => setIsOpen(false)}
-                        >
-                          Save
-                        </button>
                       </div>
                     </div>
                   </div>
