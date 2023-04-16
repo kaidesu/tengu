@@ -7,12 +7,13 @@ export default function Home() {
   // new, correct, incorrect
   const [state, setState] = useState('')
   const [word, setWord] = useState('')
-  const [group, setGroup] = useState('ichidan')
-  const [rule, setRule] = useState('negative')
+  const [group, setGroup] = useState('godan')
+  const [form, setForm] = useState('causative')
 
   const dictionary = word?.dictionary || ''
   const reading = word?.reading || ''
   const meaning = word?.meaning || ''
+  const answer = getAnswer(dictionary, group, form)
 
   const handleOnSubmit = (submission) => {
     if (state !== 'new') {
@@ -21,7 +22,7 @@ export default function Home() {
     }
 
     // Check if submission is one of the answers
-    if (checkAnswer(submission, dictionary, group, rule)) {
+    if (checkAnswer(submission, dictionary, group, form)) {
       setState('correct')
       return
     }
@@ -54,7 +55,7 @@ export default function Home() {
   return (
     <>
       <div className="w-full mb-6 text-center">
-        <p className="text-sm mb-1.5">Make the following <span className="font-bold text-red-500">negative</span></p>
+        <p className="text-sm mb-1.5">Make the following <span className="font-bold text-red-500">{form}</span></p>
 
         <div
           className="text-3xl mb-3"
@@ -82,64 +83,51 @@ export default function Home() {
             </div>
           )}
 
-          {/* {state !== 'new' && (
+          {state !== 'new' && (
             <div className="mt-6 p-1 w-full flex flex-1 flex-col border-2 rounded-md border-gray-700 space-y-1">
               <div className="p-2 bg-transparent text-gray-50 rounded">
-                <h2 className="font-bold mb-1.5">Possible Answers</h2>
+                <h2 className="font-bold mb-1.5">Correct Answer</h2>
 
-                <ul className="text-lg">
-                  {answers.map((sentence, index) => (
-                    <li key={index} className="leading-8">{sentence}</li>
-                  ))}
-                </ul>
+                <span className="leading-8 text-lg">{answer}</span>
               </div>
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-1">
                 <div className="space-y-3">
                   <div className="p-2 bg-sky-800 text-sky-50 rounded">
-                    <h2 className="font-bold mb-1.5">Vocabulary</h2>
+                    <h2 className="font-bold mb-1.5">Meaning</h2>
 
-                    <ul className="text-lg">
-                      {vocabulary.map((item, index) => (
-                        <li key={index} className="flex justify-between items-center">
-                          <span>
-                            {item.word}
-                            {item.reading && (
-                              <span className=" text-sky-200">【{item.reading}】</span>
-                            )}
-                          </span>
-                          <span>{item.meaning}</span>
-                        </li>
-                      ))}
-                    </ul>
+                    <span className="text-lg">
+                      {meaning}
+                    </span>
                   </div>
                 </div>
 
                 <div className="space-y-3">
                   <div className="p-2 bg-purple-800 text-purple-50 rounded">
-                    <h2 className="font-bold mb-1.5">Grammar</h2>
+                    <h2 className="font-bold mb-1.5">Group</h2>
 
-                    <ul className="text-lg">
-                      {grammar.map((item, index) => (
-                        <li key={index} className="flex justify-between items-center">
-                          <span>{item.grammar}</span>
-                          <span>{item.meaning}</span>
-                        </li>
-                      ))}
-                    </ul>
+                    <span className="text-lg">
+                      {group}
+                    </span>
                   </div>
                 </div>
               </div>
             </div>
-          )} */}
+          )}
         </div>
       </div>
     </>
   )
 }
 
-function checkAnswer(submission, word, group, rule) {
-  const patterns = rules[group][rule]
+function checkAnswer(submission, word, group, form) {
+  const answer = getAnswer(word, group, form)
+
+  return submission === answer
+}
+
+function getAnswer(word, group, form) {
+  const patterns = rules[group][form]
 
   // generate answer by taking the word and applying the rule
   // where the "find" is the last n characters of the word
@@ -152,7 +140,7 @@ function checkAnswer(submission, word, group, rule) {
     return newWord
   }, word)
 
-  return submission === answer
+  return answer
 }
 
 function convertToRuby(input) {

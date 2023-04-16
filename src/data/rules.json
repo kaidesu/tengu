@@ -1,7 +1,8 @@
 {
   "ichidan": {
     "negative": [{ "find": "る", "replace": "ない" }],
-    "polite": [{ "find": "る", "replace": "ます" }]
+    "polite": [{ "find": "る", "replace": "ます" }],
+    "causative": [{ "find": "る", "replace": "させる" }]
   },
 
   "godan": {
@@ -26,6 +27,17 @@
       { "find": "ぬ", "replace": "にます" },
       { "find": "ぶ", "replace": "びます" },
       { "find": "む", "replace": "みます" }
+    ],
+    "causative": [
+      { "find": "る", "replace": "らせる" },
+      { "find": "つ", "replace": "たせる" },
+      { "find": "う", "replace": "わせる" },
+      { "find": "く", "replace": "かせる" },
+      { "find": "ぐ", "replace": "がせる" },
+      { "find": "す", "replace": "させる" },
+      { "find": "ぬ", "replace": "なせる" },
+      { "find": "ぶ", "replace": "ばせる" },
+      { "find": "む", "replace": "ませる" }
     ]
   }
 }
