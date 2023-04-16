@@ -1,0 +1,26 @@
+{
+  "godan": {
+    "negative": [
+      { "find": "る", "replace": "らない" },
+      { "find": "つ", "replace": "たない" },
+      { "find": "う", "replace": "わない" },
+      { "find": "く", "replace": "かない" },
+      { "find": "ぐ", "replace": "がない" },
+      { "find": "す", "replace": "さない" },
+      { "find": "ぬ", "replace": "なない" },
+      { "find": "ぶ", "replace": "ばない" },
+      { "find": "む", "replace": "まない" }
+    ],
+    "polite": [
+      { "find": "る", "replace": "ります" },
+      { "find": "つ", "replace": "ちます" },
+      { "find": "う", "replace": "います" },
+      { "find": "く", "replace": "きます" },
+      { "find": "ぐ", "replace": "ぎます" },
+      { "find": "す", "replace": "します" },
+      { "find": "ぬ", "replace": "にます" },
+      { "find": "ぶ", "replace": "びます" },
+      { "find": "む", "replace": "みます" }
+    ]
+  }
+}
