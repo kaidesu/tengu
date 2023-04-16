@@ -1,6 +1,16 @@
 {
   "godan": [
     { "dictionary": "走る", "reading": "走[はし]る", "meaning": "to run" },
-    { "dictionary": "死ぬ", "reading": "死[し]ぬ", "meaning": "to die" }
+    { "dictionary": "死ぬ", "reading": "死[し]ぬ", "meaning": "to die" },
+    { "dictionary": "上る", "reading": "上[の]る", "meaning": "to climb" },
+    { "dictionary": "聞く", "reading": "聞[き]く", "meaning": "to hear" },
+    { "dictionary": "書く", "reading": "書[か]く", "meaning": "to write" },
+    { "dictionary": "消す", "reading": "消[け]す", "meaning": "to turn off" },
+    { "dictionary": "遊ぶ", "reading": "遊[あそ]ぶ", "meaning": "to play" },
+    { "dictionary": "学ぶ", "reading": "学[まな]ぶ", "meaning": "to learn" },
+    { "dictionary": "喜ぶ", "reading": "喜[よろこ]ぶ", "meaning": "to be delighted" },
+    { "dictionary": "泳ぐ", "reading": "泳[およ]ぐ", "meaning": "to swim" },
+    { "dictionary": "注ぐ", "reading": "注[そそ]ぐ", "meaning": "to pour" },
+    { "dictionary": "急ぐ", "reading": "急[いそ]ぐ", "meaning": "to hurry" }
   ]
 }
