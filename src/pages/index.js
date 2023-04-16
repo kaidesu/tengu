@@ -7,7 +7,7 @@ export default function Home() {
   // new, correct, incorrect
   const [state, setState] = useState('')
   const [word, setWord] = useState('')
-  const [group, setGroup] = useState('godan')
+  const [group, setGroup] = useState('ichidan')
   const [rule, setRule] = useState('negative')
 
   const dictionary = word?.dictionary || ''

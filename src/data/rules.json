@@ -1,4 +1,9 @@
 {
+  "ichidan": {
+    "negative": [{ "find": "る", "replace": "ない" }],
+    "polite": [{ "find": "る", "replace": "ます" }]
+  },
+
   "godan": {
     "negative": [
       { "find": "る", "replace": "らない" },
