@@ -1,7 +1,15 @@
 {
   "ichidan": {
-    "negative": [{ "find": "る", "replace": "ない" }],
     "polite": [{ "find": "る", "replace": "ます" }],
+    "negative": [{ "find": "る", "replace": "ない" }],
+    "past": [{ "find": "る", "replace": "た" }],
+    "te": [{ "find": "る", "replace": "て" }],
+    "progressive": [{ "find": "る", "replace": "ている" }],
+    "desire": [{ "find": "る", "replace": "たい" }],
+    "volitional": [{ "find": "る", "replace": "よう" }],
+    "potential": [{ "find": "る", "replace": "られる" }],
+    "imperative": [{ "find": "る", "replace": "ろ" }],
+    "passive": [{ "find": "る", "replace": "られる" }],
     "causative": [{ "find": "る", "replace": "させる" }]
   },
 
