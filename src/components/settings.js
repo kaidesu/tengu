@@ -143,13 +143,13 @@ export default function Settings({ isOpen, setIsOpen }) {
                           </div>
 
                           <div className="sm:col-span-2">
-                            <Checkbox id="ichidan" label="Ichidan" checked={state.groups.ichidan} handleOnChange={() => toggleGroup('ichidan')}>
+                            <Checkbox id="ichidan" label="Ichidan Verbs (一段動詞)" checked={state.groups.ichidan} handleOnChange={() => toggleGroup('ichidan')}>
                               Also known as る or Group I verbs.
                             </Checkbox>
 
-                            <Checkbox id="godan" label="Godan" checked={state.groups.godan} handleOnChange={() => toggleGroup('godan')}>
+                            {/* <Checkbox id="godan" label="Godan" checked={state.groups.godan} handleOnChange={() => toggleGroup('godan')}>
                               Also known as う or Group II verbs.
-                            </Checkbox>
+                            </Checkbox> */}
                           </div>
                         </div>
                       </div>

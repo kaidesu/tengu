@@ -15,7 +15,7 @@ const initialState = {
   },
   groups: {
     ichidan: true,
-    godan: true,
+    godan: false,
   },
 }
 
