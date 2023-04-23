@@ -1,11 +1,13 @@
-import { Fragment } from 'react'
+import { Fragment, useEffect, useState } from 'react'
 import Checkbox from '@/components/checkbox'
 import { Dialog, Transition } from '@headlessui/react'
 import { XMarkIcon } from '@heroicons/react/24/outline'
 import useSettingsContext from '@/hooks/useSettingsContext'
+import words from '@/data/words.json'
 
 export default function Settings({ isOpen, setIsOpen }) {
   const { state, dispatch } = useSettingsContext()
+  const [combinations, setCombinations] = useState(0)
 
   const toggleForm = (name) => {
     dispatch({ type: 'TOGGLE_FORM', payload: name })
@@ -14,6 +16,22 @@ export default function Settings({ isOpen, setIsOpen }) {
   const toggleGroup = (name) => {
     dispatch({ type: 'TOGGLE_GROUP', payload: name })
   }
+
+  useEffect(() => {
+    const selectedForms = Object.keys(state.forms).filter((form) => {
+      return state.forms[form]
+    })
+
+    const selectedGroups = Object.keys(state.groups).filter((group) => {
+      return state.groups[group]
+    })
+
+    const filteredWords = words.filter((word) => {
+      return selectedGroups.includes(word.group)
+    })
+
+    setCombinations(filteredWords.length * (selectedForms.length || 1))
+  }, [state.groups, state.forms])
 
   return (
     <Transition.Root show={isOpen} as={Fragment}>
@@ -154,6 +172,10 @@ export default function Settings({ isOpen, setIsOpen }) {
                             {/* <Checkbox id="godan" label="Godan" checked={state.groups.godan} handleOnChange={() => toggleGroup('godan')}>
                               Also known as う or Group II verbs.
                             </Checkbox> */}
+
+                            <div className="mt-3 p-3 bg-gray-900 bg-opacity-80 rounded-md shadow text-sm text-center text-gray-300 font-bold">
+                              <span className="text-violet-400">{combinations}</span> combinations
+                            </div>
                           </div>
                         </div>
                       </div>
