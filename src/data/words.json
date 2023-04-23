@@ -42,5 +42,10 @@
   { "dictionary": "降りる", "reading": "降[お]りる", "meaning": "to get off", "group": "ichidan" },
   { "dictionary": "借りる", "reading": "借[か]りる", "meaning": "to borrow", "group": "ichidan" },
   { "dictionary": "浴びる", "reading": "浴[あ]びる", "meaning": "to take a shower", "group": "ichidan" },
-  { "dictionary": "つける", "reading": "つける", "meaning": "to turn on", "group": "ichidan" }
+  { "dictionary": "つける", "reading": "つける", "meaning": "to turn on", "group": "ichidan" },
+  { "dictionary": "かける", "reading": "かける", "meaning": "to put on (glasses)", "group": "ichidan" },
+  { "dictionary": "着る", "reading": "着[き]る", "meaning": "to put on (clothes)", "group": "ichidan" },
+  { "dictionary": "やせる", "reading": "やせる", "meaning": "to lose weight", "group": "ichidan" },
+  { "dictionary": "捨てる", "reading": "捨[す]てる", "meaning": "to throw away", "group": "ichidan" },
+  { "dictionary": "始める", "reading": "始[はじ]める", "meaning": "to begin", "group": "ichidan" }
 ]
