@@ -129,6 +129,10 @@ export default function Settings({ isOpen, setIsOpen }) {
                             <Checkbox id="causative" label="Causative" checked={state.forms.causative} handleOnChange={() => toggleForm('causative')}>
                               Expresses that someone causes or makes another person do something.
                             </Checkbox>
+
+                            <Checkbox id="causative-passive" label="Causative Passive" checked={state.forms.causativePassive} handleOnChange={() => toggleForm('causativePassive')}>
+                              Expresses that someone is caused or made to do something by another person, while the subject passively experiences the action.
+                            </Checkbox>
                           </div>
                         </div>
 

@@ -10,7 +10,8 @@
     "potential": [{ "find": "る", "replace": "られる" }],
     "imperative": [{ "find": "る", "replace": "ろ" }],
     "passive": [{ "find": "る", "replace": "られる" }],
-    "causative": [{ "find": "る", "replace": "させる" }]
+    "causative": [{ "find": "る", "replace": "させる" }],
+    "causativePassive": [{ "find": "る", "replace": "させられる"}]
   },
 
   "godan": {

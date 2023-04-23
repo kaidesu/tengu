@@ -82,34 +82,37 @@ export default function Home() {
           
           {/* Being lazy, so hard coding these for now */}
           {form === 'negative' && (
-            <span className="bg-red-600 font-bold text-red-50 p-1 ml-1 rounded">{form}</span>
+            <span className="bg-red-600 font-bold text-red-50 p-1 ml-1 rounded">negative</span>
           )}
           {form === 'past' && (
-            <span className="bg-amber-600 font-bold text-amber-50 p-1 ml-1 rounded">{form}</span>
+            <span className="bg-amber-600 font-bold text-amber-50 p-1 ml-1 rounded">past</span>
           )}
           {form === 'te' && (
-            <span className="bg-green-600 font-bold text-green-50 p-1 ml-1 rounded">{form}</span>
+            <span className="bg-green-600 font-bold text-green-50 p-1 ml-1 rounded">te</span>
           )}
           {form === 'progressive' && (
-            <span className="bg-cyan-600 font-bold text-cyan-50 p-1 ml-1 rounded">{form}</span>
+            <span className="bg-cyan-600 font-bold text-cyan-50 p-1 ml-1 rounded">progressive</span>
           )}
           {form === 'desire' && (
-            <span className="bg-pink-600 font-bold text-pink-50 p-1 ml-1 rounded">{form}</span>
+            <span className="bg-pink-600 font-bold text-pink-50 p-1 ml-1 rounded">desire</span>
           )}
           {form === 'volitional' && (
-            <span className="bg-indigo-600 font-bold text-indigo-50 p-1 ml-1 rounded">{form}</span>
+            <span className="bg-indigo-600 font-bold text-indigo-50 p-1 ml-1 rounded">volitional</span>
           )}
           {form === 'potential' && (
-            <span className="bg-orange-600 font-bold text-orange-50 p-1 ml-1 rounded">{form}</span>
+            <span className="bg-orange-600 font-bold text-orange-50 p-1 ml-1 rounded">potential</span>
           )}
           {form === 'imperative' && (
-            <span className="bg-lime-300 font-bold text-lime-600 p-1 ml-1 rounded">{form}</span>
+            <span className="bg-lime-300 font-bold text-lime-600 p-1 ml-1 rounded">imperative</span>
           )}
           {form === 'passive' && (
-            <span className="bg-gray-600 font-bold text-gray-50 p-1 ml-1 rounded">{form}</span>
+            <span className="bg-gray-600 font-bold text-gray-50 p-1 ml-1 rounded">passive</span>
           )}
           {form === 'causative' && (
-            <span className="bg-violet-600 font-bold text-violet-50 p-1 ml-1 rounded">{form}</span>
+            <span className="bg-violet-600 font-bold text-violet-50 p-1 ml-1 rounded">causative</span>
+          )}
+          {form === 'causativePassive' && (
+            <span className="bg-violet-600 font-bold text-violet-50 p-1 ml-1 rounded">causative passive</span>
           )}
         </p>
 

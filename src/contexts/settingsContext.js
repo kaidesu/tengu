@@ -11,7 +11,8 @@ const initialState = {
     potential: false,
     imperative: false,
     passive: false,
-    causative: true,    
+    causative: true,
+    causativePassive: false,
   },
   groups: {
     ichidan: true,
